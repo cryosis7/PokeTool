@@ -1,0 +1,452 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/fullScreen"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    tools:context=".MainActivity">
+
+    <Button
+
+        android:id="@+id/btn_offensive"
+        android:layout_width="200dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/offensive_button_shape"
+        android:onClick="btnOffensiveClick"
+        android:text="@string/defending"
+        android:textColor="#e0e0e0"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TableLayout
+        android:id="@+id/tbl_icon"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_offensive">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageButton
+                android:id="@+id/btn_bug"
+                android:layout_width="0dip"
+                android:layout_height="55dp"
+                android:layout_weight="1"
+                android:background="@null"
+                android:onClick="iconButtonHandler"
+                android:padding="7dip"
+                android:scaleType="fitCenter"
+                app:srcCompat="@drawable/icon_bug" />
+
+            <ImageButton
+                android:id="@+id/btn_dark"
+                android:layout_width="0dip"
+                android:layout_height="55dp"
+                android:layout_weight="1"
+                android:background="@null"
+                android:onClick="iconButtonHandler"
+                android:padding="7dip"
+                android:scaleType="fitCenter"
+                app:srcCompat="@drawable/icon_dark" />
+
+            <ImageButton
+                android:id="@+id/btn_dragon"
+                android:layout_width="0dip"
+                android:layout_height="55dp"
+                android:layout_weight="1"
+                android:background="@null"
+                android:onClick="iconButtonHandler"
+                android:padding="7dip"
+                android:scaleType="fitCenter"
+                app:srcCompat="@drawable/icon_dragon" />
+
+            <ImageButton
+                android:id="@+id/btn_electric"
+                android:layout_width="0dip"
+                android:layout_height="55dp"
+                android:layout_weight="1"
+                android:background="@null"
+                android:onClick="iconButtonHandler"
+                android:padding="7dip"
+                android:scaleType="fitCenter"
+                app:srcCompat="@drawable/icon_electric" />
+
+            <ImageButton
+                android:id="@+id/btn_fairy"
+                android:layout_width="0dip"
+                android:layout_height="55dp"
+                android:layout_weight="1"
+                android:background="@null"
+                android:onClick="iconButtonHandler"
+                android:padding="7dip"
+                android:scaleType="fitCenter"
+                app:srcCompat="@drawable/icon_fairy" />
+
+            <ImageButton
+                android:id="@+id/btn_fighting"
+                android:layout_width="0dip"
+                android:layout_height="55dp"
+                android:layout_weight="1"
+                android:background="@null"
+                android:onClick="iconButtonHandler"
+                android:padding="7dip"
+                android:scaleType="fitCenter"
+                app:srcCompat="@drawable/icon_fighting" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageButton
+                android:id="@+id/btn_fire"
+                android:layout_width="0dip"
+                android:layout_height="55dp"
+                android:layout_weight="1"
+                android:background="@null"
+                android:onClick="iconButtonHandler"
+                android:padding="7dip"
+                android:scaleType="fitCenter"
+                app:srcCompat="@drawable/icon_fire" />
+
+            <ImageButton
+                android:id="@+id/btn_flying"
+                android:layout_width="0dip"
+                android:layout_height="55dp"
+                android:layout_weight="1"
+                android:background="@null"
+                android:onClick="iconButtonHandler"
+                android:padding="7dip"
+                android:scaleType="fitCenter"
+                app:srcCompat="@drawable/icon_flying" />
+
+            <ImageButton
+                android:id="@+id/btn_ghost"
+                android:layout_width="0dip"
+                android:layout_height="55dp"
+                android:layout_weight="1"
+                android:background="@null"
+                android:onClick="iconButtonHandler"
+                android:padding="7dip"
+                android:scaleType="fitCenter"
+                app:srcCompat="@drawable/icon_ghost" />
+
+            <ImageButton
+                android:id="@+id/btn_grass"
+                android:layout_width="0dip"
+                android:layout_height="55dp"
+                android:layout_weight="1"
+                android:background="@null"
+                android:onClick="iconButtonHandler"
+                android:padding="7dip"
+                android:scaleType="fitCenter"
+                app:srcCompat="@drawable/icon_grass" />
+
+            <ImageButton
+                android:id="@+id/btn_ground"
+                android:layout_width="0dip"
+                android:layout_height="55dp"
+                android:layout_weight="1"
+                android:background="@null"
+                android:onClick="iconButtonHandler"
+                android:padding="7dip"
+                android:scaleType="fitCenter"
+                app:srcCompat="@drawable/icon_ground" />
+
+            <ImageButton
+                android:id="@+id/btn_ice"
+                android:layout_width="0dip"
+                android:layout_height="55dp"
+                android:layout_weight="1"
+                android:background="@null"
+                android:onClick="iconButtonHandler"
+                android:padding="7dip"
+                android:scaleType="fitCenter"
+                app:srcCompat="@drawable/icon_ice" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageButton
+                android:id="@+id/btn_normal"
+                android:layout_width="0dip"
+                android:layout_height="55dp"
+                android:layout_weight="1"
+                android:background="@null"
+                android:onClick="iconButtonHandler"
+                android:padding="7dip"
+                android:scaleType="fitCenter"
+                app:srcCompat="@drawable/icon_normal" />
+
+            <ImageButton
+                android:id="@+id/btn_poison"
+                android:layout_width="0dip"
+                android:layout_height="55dp"
+                android:layout_weight="1"
+                android:background="@null"
+                android:onClick="iconButtonHandler"
+                android:padding="7dip"
+                android:scaleType="fitCenter"
+                app:srcCompat="@drawable/icon_poison" />
+
+            <ImageButton
+                android:id="@+id/btn_psychic"
+                android:layout_width="0dip"
+                android:layout_height="55dp"
+                android:layout_weight="1"
+                android:background="@null"
+                android:onClick="iconButtonHandler"
+                android:padding="7dip"
+                android:scaleType="fitCenter"
+                app:srcCompat="@drawable/icon_psychic" />
+
+            <ImageButton
+                android:id="@+id/btn_rock"
+                android:layout_width="0dip"
+                android:layout_height="55dp"
+                android:layout_weight="1"
+                android:background="@null"
+                android:onClick="iconButtonHandler"
+                android:padding="7dip"
+                android:scaleType="fitCenter"
+                app:srcCompat="@drawable/icon_rock" />
+
+            <ImageButton
+                android:id="@+id/btn_steel"
+                android:layout_width="0dip"
+                android:layout_height="55dp"
+                android:layout_weight="1"
+                android:background="@null"
+                android:onClick="iconButtonHandler"
+                android:padding="7dip"
+                android:scaleType="fitCenter"
+                app:srcCompat="@drawable/icon_steel" />
+
+            <ImageButton
+                android:id="@+id/btn_water"
+                android:layout_width="0dip"
+                android:layout_height="55dp"
+                android:layout_weight="1"
+                android:background="@null"
+                android:onClick="iconButtonHandler"
+                android:padding="7dip"
+                android:scaleType="fitCenter"
+                app:srcCompat="@drawable/icon_water" />
+        </TableRow>
+
+    </TableLayout>
+
+    <TableLayout
+        android:id="@+id/tbl_results"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tbl_icon">
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="2dp"
+            android:background="@color/colorPrimaryDark" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:paddingBottom="10dp"
+            android:paddingTop="2dp">
+
+            <TextView
+                android:id="@+id/txt_extremely_effective"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-smallcaps"
+                android:text="Extremely Effective"
+                android:textAlignment="center"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp"
+                tools:text="Extremely Effective" />
+
+            <LinearLayout
+                android:id="@+id/linear_extremely_effective"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="2dp"
+            android:background="@color/colorPrimaryDark" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:paddingBottom="10dp"
+            android:paddingTop="2dp">
+
+            <TextView
+                android:id="@+id/txt_super_effective"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-smallcaps"
+                android:text="Super Effective"
+                android:textAlignment="center"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp"
+                tools:text="Super Effective" />
+
+            <LinearLayout
+                android:id="@+id/linear_super_effective"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="2dp"
+            android:background="@color/colorPrimaryDark" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:paddingBottom="10dp"
+            android:paddingTop="2dp">
+
+            <TextView
+                android:id="@+id/txt_normal_effectiveness"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-smallcaps"
+                android:text="Normal Effectiveness"
+                android:textAlignment="center"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp"
+                tools:text="Normal Effectiveness" />
+
+            <LinearLayout
+                android:id="@+id/linear_normal_effectiveness"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="2dp"
+            android:background="@color/colorPrimaryDark" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:paddingBottom="10dp"
+            android:paddingTop="2dp">
+
+            <TextView
+                android:id="@+id/txt_not_very_effective"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-smallcaps"
+                android:text="Not Very Effective"
+                android:textAlignment="center"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp"
+                tools:text="Not Very Effective" />
+
+            <LinearLayout
+                android:id="@+id/linear_not_very_effective"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="2dp"
+            android:background="@color/colorPrimaryDark" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:paddingBottom="10dp"
+            android:paddingTop="2dp">
+
+            <TextView
+                android:id="@+id/txt_extremely_ineffective"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-smallcaps"
+                android:text="Extremely Ineffective"
+                android:textAlignment="center"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp"
+                tools:text="Extremely Ineffective" />
+
+            <LinearLayout
+                android:id="@+id/linear_extremely_ineffective"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="2dp"
+            android:background="@color/colorPrimaryDark" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:paddingBottom="10dp"
+            android:paddingTop="2dp">
+
+            <TextView
+                android:id="@+id/txt_no_effect"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-smallcaps"
+                android:text="No Effect"
+                android:textAlignment="center"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp"
+                tools:text="No Effect" />
+
+            <LinearLayout
+                android:id="@+id/linear_no_effect"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" />
+        </LinearLayout>
+    </TableLayout>
+
+</android.support.constraint.ConstraintLayout>

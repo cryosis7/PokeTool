@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">PokeTool</string>
+    <string name="attacking">ATTACKING</string>
+    <string name="defending">DEFENDING</string>
+</resources>

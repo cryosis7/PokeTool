@@ -122,75 +122,42 @@ public class MainActivity extends AppCompatActivity {
      * Copies the super effective attacking types and super resistance defensive types
      * to the clipboard for searching in Pokemon Go.
      *
-     * @param chart1 The attacking or defending effectiveness list that was fetched
-     *               prior to this method call via Type.getAttackers or Type.getDefenders.
+     * @param typeChart The attacking or defending effectiveness list that was fetched
+     *                  prior to this method call via Type.getAttackers or Type.getDefenders.
      */
-    private void copySearchStringToClipboard(List<List<String>> chart1) {
+    private void copySearchStringToClipboard(List<List<String>> typeChart) {
+
         if (clickedIcons[0] != -1) {
+            StringBuilder types = new StringBuilder();
+            String minimumCP = "CP2000-10000";
 
-            // If defending(button) is true, then we know chart1(parameter) = defenders list.
-            List<List<String>> defenseChart = (defending) ? chart1 : null;
-            List<List<String>> attackingChart = (defending) ? null : chart1;
-
-            // Fetching the other attacking or defending chart.
-            try {
-                String type1 = getResources().getResourceEntryName(clickedIcons[0]).split("_|\\.")[1];
-
-                if (defending) {
-                    attackingChart = Type.getAttacker(type1);
-                } else {
-                    if (clickedIcons[1] == -1)
-                        defenseChart = Type.getDefender(type1);
-                    else {
-                        String type2 = getResources().getResourceEntryName(clickedIcons[1]).split("_|\\.")[1];
-                        defenseChart = Type.getDefender(type1, type2);
+            if (defending) {    // Loop through the first two in the list
+                for (int i = 0; i < 2; i++) {
+                    for (int j = 0; j < typeChart.get(i).size(); j++) {
+                        String s = typeChart.get(i).get(j);
+                        types.append("@").append(s);
+                        if (i < 1 || j < typeChart.get(i).size() - 1)
+                            types.append(", ");
                     }
                 }
-            } catch (Exception e) {
-                AlertDialog.Builder builder;
-                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-                    builder = new AlertDialog.Builder(this, android.R.style.Theme_Material_Dialog_Alert);
-                } else {
-                    builder = new AlertDialog.Builder(this);
-                }
-                builder.setTitle("Error While Copying To Clipboard")
-                        .setMessage(e.toString() + "\n" + e.getMessage())
-                        .setNeutralButton(android.R.string.ok, new DialogInterface.OnClickListener() {
-                            public void onClick(DialogInterface dialog, int which) {
-                            }
-                        })
-                        .setIcon(android.R.drawable.ic_dialog_alert)
-                        .show();
-                return;
             }
-
-            // Now building the search term.
-            String defense = "";
-            String attack = "";
-            String minimumCP = "CP1500-10000";
-
-            for (int i = 0; i < 2; i++) {
-                for (int j = 0; j < defenseChart.get(i).size(); j++) {
-                    String s = defenseChart.get(i).get(j);
-                    attack += "@" + s;
-                    if (i != 1 || j < defenseChart.get(i).size() - 1)
-                        attack += ",";
-                }
-            }
-            //Looping through the bottom three
-            for (int i = attackingChart.size() - 1; i > 2; i--) {
-                for (int j = 0; j < attackingChart.get(i).size(); j++) {
-                    String s = attackingChart.get(i).get(j);
-                    defense += s;
-                    if (i != 3 || j < attackingChart.get(i).size() - 1)
-                        defense += ",";
+            else {              // Loop through the last three
+                for (int i = typeChart.size() - 1; i > 2; i--) {
+                    for (int j = 0; j < typeChart.get(i).size(); j++) {
+                        String s = typeChart.get(i).get(j);
+                        types.append(s);
+                        if (i > 3 || j < typeChart.get(i).size() - 1)
+                            types.append(", ");
+                    }
                 }
             }
 
-            String searchTerm = attack + "," + defense + "&" + minimumCP;
+            String searchTerm =typeChart + "&" + minimumCP;
             ClipboardManager clipboard = (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
             ClipData clip = ClipData.newPlainText("PoGo Search Term", searchTerm);
-            clipboard.setPrimaryClip(clip);
+            if (clipboard != null) {
+                clipboard.setPrimaryClip(clip);
+            }
         }
     }
 
@@ -349,14 +316,6 @@ public class MainActivity extends AppCompatActivity {
                             index = 5;
                         else
                             index = i + (j - 2);
-//                        else if (i == j)
-//                            index = i + (i-2);
-//                        else if (i == 1)
-//                            index = (j == 2) ? 1 : 2;
-//                        else if (i == 2)
-//                            index = (j == 1) ? 1 : 3;
-//                        else if (i == 3)
-//                            index = (j == 1) ? 2 : 3;
 
                         combined.get(index).add(s);
                     }

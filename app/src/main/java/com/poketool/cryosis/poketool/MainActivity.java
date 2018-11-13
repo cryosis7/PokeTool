@@ -152,7 +152,7 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
 
-            String searchTerm =typeChart + "&" + minimumCP;
+            String searchTerm = types + "&" + minimumCP;
             ClipboardManager clipboard = (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
             ClipData clip = ClipData.newPlainText("PoGo Search Term", searchTerm);
             if (clipboard != null) {

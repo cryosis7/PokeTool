@@ -23,7 +23,7 @@
                                           <PersistentState>
                                             <option name="values">
                                               <map>
-                                                <entry key="scalingPercent" value="90" />
+                                                <entry key="scalingPercent" value="86" />
                                                 <entry key="trimmed" value="true" />
                                               </map>
                                             </option>
@@ -34,7 +34,10 @@
                                   </option>
                                   <option name="values">
                                     <map>
-                                      <entry key="foregroundImage" value="C:\Users\scott\Downloads\pokemon-icons\SVG\143-snorlax.svg" />
+                                      <entry key="backgroundAssetType" value="COLOR" />
+                                      <entry key="backgroundColor" value="373737" />
+                                      <entry key="foregroundImage" value="E:\Programs\Android\SnorlaxPng\512.png" />
+                                      <entry key="legacyIconShape" value="NONE" />
                                     </map>
                                   </option>
                                 </PersistentState>
